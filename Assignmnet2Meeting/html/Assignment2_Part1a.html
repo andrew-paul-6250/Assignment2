@@ -1,0 +1,266 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Assignmnet 2 Part 1 a) - Andrew Paul 100996250</title><meta name="generator" content="MATLAB 9.5"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2019-02-24"><meta name="DC.source" content="Assignment2_Part1a.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Assignmnet 2 Part 1 a) - Andrew Paul 100996250</h1><p>The first section of this assignment invlolved solving a simple case of the Laplace equation where one end of a 2D grid is fixed at a voltage V0 on the x-axis and is set to zero at the other end with a uniform charge distribution.</p><p>The finite difference method was used to solve for the given case using the matrix solution technique of <img src="Assignment2_Part1a_eq01602310289614968730.png" alt="$GV=F$" style="width:53px;height:11px;">, where <img src="Assignment2_Part1a_eq02739270504201626537.png" alt="$V$" style="width:11px;height:11px;"> is the voltage solutions over the grid, <img src="Assignment2_Part1a_eq07365524530707038546.png" alt="$G$" style="width:11px;height:11px;"> is the matrix which defines how each discrete votlage point is related to the neighbouring voltage values, and <img src="Assignment2_Part1a_eq08597826192214703288.png" alt="$F$" style="width:11px;height:11px;"> is the matrix which sets the boundary conditions. A simplified version of Lapalce's equation is used in order to sovle for the voltages, discrete approximations are used in order to calculate finite values.</p><p><img src="Assignment2_Part1a_eq09080275618699248245.png" alt="$$\frac{V_{x-1,y}-2V_{x,y}+V_{x+1,y}}{(\Delta x)^2} + \frac{V_{x,y-1}-2V_{x,y}+V_{x,y+1}}{(\Delta y)^2}=0$$" style="width:329px;height:34px;"></p><pre class="codeinput">clear
+
+<span class="comment">% Set the length and width of the grid and the voltage V0</span>
+L = 3;
+W = 2;
+V0 = 1;
+
+<span class="comment">% Spacing and number of points of grid</span>
+
+dx = 0.1;
+dy = 0.1;
+nx = L/dx;
+ny = W/dy;
+
+<span class="comment">% Parameters of Laplace equation</span>
+
+p1 = 1/(dx^2);
+p2 = 1/(dy^2);
+p3 = -2*(1/dx^2 + 1/dy^2);
+
+<span class="comment">% Generate "G" Matrix</span>
+
+G = zeros(nx*ny,nx*ny);
+
+<span class="keyword">for</span> i = 2:nx-1
+    <span class="keyword">for</span> j = 2:ny-1
+        <span class="comment">% set indicies for all neighbouring points</span>
+        n = i + (j-1)*nx;
+        nym = i + (j-2)*nx;
+        nyp = i + j*nx;
+        nxm = (i-1) + (j-1)*nx;
+        nxp = (i+1) + (j-1)*nx;
+
+        <span class="comment">% Define values of G matrix</span>
+        G(n,n) = p3;
+        G(n,nxm) = p1;
+        G(n,nxp) = p1;
+        G(n,nym) = p2;
+        G(n,nyp) = p2;
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+<span class="comment">% Generate "F" Matrix</span>
+
+F = zeros(nx*ny,1);
+
+<span class="comment">% set boundary conditions</span>
+
+<span class="keyword">for</span> j = 1:ny
+    n = 1 + (j-1)*nx;
+    G(n,n) = 1;
+
+    F(n) = V0;
+
+    n1 = nx + (j-1)*nx;
+    G(n1,n1) = 1;
+<span class="keyword">end</span>
+
+<span class="keyword">for</span> i = 2:(nx-1)
+    n = i;
+    G(n,n) = 1;
+    n1 = i + nx;
+    G(n,n1) = -1;
+
+    n = i + (ny-1)*nx;
+    n1 = i + (ny-2)*nx;
+    G(n,n) = 1;
+    G(n,n1) = -1;
+<span class="keyword">end</span>
+
+<span class="comment">% Finding solution and reshaping the transpose</span>
+
+A = G\F;
+solution = reshape(A,[],ny)';
+
+xrange = linspace(0,L,nx);
+yrange = linspace(0,W,ny);
+
+figure(1)
+surf(xrange,yrange,solution)
+xlabel(<span class="string">'x'</span>)
+ylabel(<span class="string">'y'</span>)
+zlabel(<span class="string">'Voltage'</span>)
+title(<span class="string">'Simple Finite Differences Solution'</span>)
+view(0,90)
+</pre><img vspace="5" hspace="5" src="Assignment2_Part1a_01.png" alt=""> <p>The figure above shows that the distribution of voltage satifies the given conditions</p><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Assignmnet 2 Part 1 a) - Andrew Paul 100996250
+% The first section of this assignment invlolved solving a simple case of
+% the Laplace equation where one end of a 2D grid is fixed at a voltage V0
+% on the x-axis and is set to zero at the other end with a uniform charge
+% distribution.
+%
+% The finite difference method was used to solve for the given case using
+% the matrix solution technique of $GV=F$, where $V$ is the voltage
+% solutions over the grid, $G$ is the matrix which defines how each
+% discrete votlage point is related to the neighbouring voltage values, and
+% $F$ is the matrix which sets the boundary conditions.
+% A simplified version of Lapalce's equation is used in order to sovle for
+% the voltages, discrete approximations are used in order to calculate
+% finite values.
+%
+% $$\frac{V_{x-1,y}-2V_{x,y}+V_{x+1,y}}{(\Delta x)^2} + \frac{V_{x,y-1}-2V_{x,y}+V_{x,y+1}}{(\Delta y)^2}=0$$
+%
+
+clear
+
+% Set the length and width of the grid and the voltage V0
+L = 3;
+W = 2;
+V0 = 1;
+
+% Spacing and number of points of grid
+
+dx = 0.1;
+dy = 0.1;
+nx = L/dx;
+ny = W/dy;
+
+% Parameters of Laplace equation
+
+p1 = 1/(dx^2);
+p2 = 1/(dy^2);
+p3 = -2*(1/dx^2 + 1/dy^2);
+
+% Generate "G" Matrix
+
+G = zeros(nx*ny,nx*ny);
+
+for i = 2:nx-1
+    for j = 2:ny-1
+        % set indicies for all neighbouring points
+        n = i + (j-1)*nx;
+        nym = i + (j-2)*nx;
+        nyp = i + j*nx;
+        nxm = (i-1) + (j-1)*nx;
+        nxp = (i+1) + (j-1)*nx;
+        
+        % Define values of G matrix
+        G(n,n) = p3;
+        G(n,nxm) = p1;
+        G(n,nxp) = p1;
+        G(n,nym) = p2;
+        G(n,nyp) = p2;
+    end
+end
+
+% Generate "F" Matrix
+
+F = zeros(nx*ny,1);
+
+% set boundary conditions
+
+for j = 1:ny
+    n = 1 + (j-1)*nx;
+    G(n,n) = 1;
+    
+    F(n) = V0;
+    
+    n1 = nx + (j-1)*nx;
+    G(n1,n1) = 1;
+end
+    
+for i = 2:(nx-1)
+    n = i;
+    G(n,n) = 1;
+    n1 = i + nx;
+    G(n,n1) = -1;
+    
+    n = i + (ny-1)*nx;
+    n1 = i + (ny-2)*nx;
+    G(n,n) = 1;
+    G(n,n1) = -1;
+end
+
+% Finding solution and reshaping the transpose
+
+A = G\F;
+solution = reshape(A,[],ny)';
+
+xrange = linspace(0,L,nx);
+yrange = linspace(0,W,ny);
+
+figure(1)
+surf(xrange,yrange,solution)
+xlabel('x')
+ylabel('y')
+zlabel('Voltage')
+title('Simple Finite Differences Solution')
+view(0,90)
+        
+%% 
+% The figure above shows that the distribution of voltage satifies the
+% given conditions
+      
+
+##### SOURCE END #####
+--></body></html>
